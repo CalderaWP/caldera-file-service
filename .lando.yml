@@ -1,0 +1,32 @@
+name: cf-s-3-files
+recipe: laravel
+config:
+  webroot: public
+  database: mariadb:10.1
+  cache: redis
+  php: '7.2'
+  via: nginx
+  conf:
+    php: php.ini
+proxy:
+  pma:
+  - pma.cfs3files.lndo.site
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+appserver:
+  composer:
+    phpunit/phpunit: '*'
+  events:
+    post-start:
+      - appserver: cd $LANDO_MOUNT && composer install
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  phpunit:
+    service: appserver
+    description: "Run PHP Unit tests: lando phpunit"
