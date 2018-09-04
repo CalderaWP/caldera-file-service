@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post( '/file/upload', 's3FilesController@upload' );
+Route::delete( '/file/{id}', 's3FilesController@delete' );
+Route::post( '/teststore', 's3FilesController@store' );

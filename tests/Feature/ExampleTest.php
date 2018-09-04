@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Auth;
 
 class ExampleTest extends TestCase
 {
@@ -23,5 +24,6 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
 
 }
