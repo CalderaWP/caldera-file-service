@@ -2,7 +2,7 @@ name: cf-s-3-files
 recipe: laravel
 config:
   webroot: public
-  database: mariadb:10.1
+  database: mysql
   cache: redis
   php: '7.2'
   via: nginx
