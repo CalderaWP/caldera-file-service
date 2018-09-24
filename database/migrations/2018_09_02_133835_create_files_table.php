@@ -15,9 +15,12 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('account_id');
-            $table->integer('s3_id');
+            $table->string('file_id');
+            $table->integer('cf_account_id');
             $table->string('cdn_url');
+            $table->string('filename');
+            $table->string('s3_path');
+            $table->string('cf_entry_id');
             $table->timestamps();
         });
     }
