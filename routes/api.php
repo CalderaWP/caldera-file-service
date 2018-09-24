@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('cors')->post('/file/upload', 's3FilesController@upload');
+Route::middleware('cors')->delete('/file/{file_id}', 's3FilesController@delete');
+Route::middleware('cors')->get('/file/{file_id}', 's3FilesController@retrieve');
+
