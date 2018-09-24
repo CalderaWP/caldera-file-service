@@ -20,6 +20,6 @@ class storageTest extends TestCase
     public function testFilePath()
     {
         $url = Storage::url('file.jpg');
-        $this->assertEquals($url, 'https://caldera-files.s3.us-east-2.amazonaws.com/file.jpg');
+        $this->assertEquals($url, 'd79rz5qa0bn1d.cloudfront.net/file.jpg');
     }
 }
