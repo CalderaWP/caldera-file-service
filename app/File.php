@@ -10,9 +10,12 @@ class File extends Model
 {
     /** @inheritdoc */
     protected $table = [
-        'account_id',
-        's3_id',
-        'cdn_url'
+        'file_id',
+        'cf_account_id',
+        'cdn_url',
+        'filename',
+        's3_path',
+        'cf_entry_id'
     ];
 
     /** @inheritdoc */
