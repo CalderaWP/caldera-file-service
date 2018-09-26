@@ -46,7 +46,10 @@ class s3FilesController extends Controller
                     ]
                 );
 
-                return $file_id;
+                return response()->json([
+                    'file'      =>  $file_id,
+                    'filename'  =>  $filename
+                ]);
 
             }
 
